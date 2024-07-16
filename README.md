@@ -41,15 +41,15 @@ For example
 #include <job_scheduler/date_parser.hpp>
 
 int main() {
-    job_scheduler::Scheduler scheduler;
+    Scheduler scheduler;
 
     auto taskA = []() { std::cout << "Task A executed\n"; };
     auto taskB = []() { std::cout << "Task B executed\n"; };
     auto taskC = []() { std::cout << "Task C executed\n"; };
 
-    job_scheduler::Job jobA("Job A", 10, std::chrono::seconds(1), taskA);
-    job_scheduler::Job jobB("Job B", 50, job_scheduler::DateParser("16/07/2024 15:25"), taskB);
-    job_scheduler::Job jobC("Job C", 5, std::chrono::seconds(0), taskC, true, std::chrono::seconds(30));
+    Job jobA("Job A", 10, std::chrono::seconds(1), taskA);
+    Job jobB("Job B", 50, DateParser("16/07/2024 15:25"), taskB);
+    Job jobC("Job C", 5, std::chrono::seconds(0), taskC, true, std::chrono::seconds(30));
 
     scheduler.addJob(jobA);
     scheduler.addJob(jobB);
@@ -67,7 +67,7 @@ int main() {
 ### To compile and link your project using g++, follow these steps:
 
 ### 1. cd path/to/my_project
-### 2. g++ -std=c++11 -Iinclude -Llib -lJobScheduler main.cpp -o MyExecutable -lpthread
+### 2. g++ -std=c++11 main.cpp -Iinclude -Llib -lJobScheduler -o MyExecutable -lpthread
 ### 3. ./MyExecutable
 
 
