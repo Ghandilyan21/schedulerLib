@@ -1,10 +1,5 @@
 #ifndef JOB_H
 #define JOB_H
-// #include <memory>
-// #include <iostream>
-// #include <functional>
-// #include <chrono>
-// #include <string>
 #include "job_interface.hpp"
 #include "date_parser.hpp"
 #include <string>
@@ -20,6 +15,7 @@ public:
     Job(const std::string &name, int priority, const std::chrono::system_clock::time_point &time, const std::function<void()> &task, bool periodic = false, const std::chrono::seconds &interval = std::chrono::seconds(0));
     // Constructor for seconds
     Job(const std::string &name, int priority, const std::chrono::seconds &time, const std::function<void()> &task, bool periodic = false, const std::chrono::seconds &interval = std::chrono::seconds(0));
+    //Copy constructor    
     Job(const Job& other);
     
     std::string getName() const override;
@@ -30,9 +26,7 @@ public:
     bool IsPeriodic() const override;
     std::chrono::seconds getInterval() const override;
     void printScheduledTime() const override;
-    ~Job() override {
-        // std::cout << "\n " << name << " dtor\n";
-    };
+    ~Job() override {};
 private:
     std::string name;
     int priority;
@@ -41,5 +35,4 @@ private:
     bool isPeriodic;
     std::chrono::seconds interval;
 };
-
 #endif
