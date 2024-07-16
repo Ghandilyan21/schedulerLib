@@ -21,13 +21,8 @@ Create your project directory and ensure it looks like this:
 
 <pre>
 my_project/
-├── main.cpp
-├── include/
-│   └── job_scheduler/  # Copy the include directory from job_scheduler
-├── lib/
-│   └──  # Copy the static library from job_scheduler/src
+    ├── main.cpp
 </pre>
-
 
 ### Step 2: Write Your `main.cpp`
 
@@ -62,17 +57,24 @@ int main() {
     return 0;
 }
 ```
-# Step 3: Compile and Link Your Project with g++
-### You can use c++11 or higher standart
-### To compile and link your project using g++, follow these steps:
+
+### Step 3: git clone the `schedulerLib` folder 
+[schedulerLib](https://github.com/Ghandilyan21/schedulerLib.git) 
+<pre>git clone  https://github.com/Ghandilyan21/schedulerLib.git</pre>
+#### 1. Copy `include` and `lib` folders to your project main directory
+
+### Step 4: Compile and Link Your Project with g++
+
+#### You can use c++11 or higher standart
+#### To compile and link your project using g++, follow these steps:
 
 <pre> 1. cd path/to/my_project</pre>
 <pre> 2. g++ -std=c++11 main.cpp -Iinclude -Llib -lJobScheduler -o MyExecutable -lpthread </pre>
 <pre> 3. ./MyExecutable </pre>
 
 
-# After all your project will have this structure
 
+# After all your project will have this structure
 
 <pre>
 my_project/
