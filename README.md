@@ -66,9 +66,9 @@ int main() {
 ### You can use c++11 or higher standart
 ### To compile and link your project using g++, follow these steps:
 
-### 1. cd path/to/my_project
-### 2. g++ -std=c++11 main.cpp -Iinclude -Llib -lJobScheduler -o MyExecutable -lpthread
-### 3. ./MyExecutable
+<pre> 1. cd path/to/my_project</pre>
+<pre> 2. g++ -std=c++11 main.cpp -Iinclude -Llib -lJobScheduler -o MyExecutable -lpthread </pre>
+<pre> 3. ./MyExecutable </pre>
 
 
 # After all your project will have this structure
