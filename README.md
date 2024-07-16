@@ -44,14 +44,14 @@ int main() {
 
     Job jobA("Job A", 10, std::chrono::seconds(1), taskA);
     Job jobB("Job B", 50, DateParser("16/07/2024 15:25"), taskB);
-    Job jobC("Job C", 5, std::chrono::seconds(0), taskC, true, std::chrono::seconds(30));
+    Job jobC("Job C", 5, std::chrono::seconds(0), taskC, true, std::chrono::seconds(5));
 
     scheduler.addJob(jobA);
     scheduler.addJob(jobB);
     scheduler.addJob(jobC);
 
     scheduler.start();
-    std::this_thread::sleep_for(std::chrono::seconds(10));
+    std::this_thread::sleep_for(std::chrono::seconds(30));
     scheduler.stop();
 
     return 0;
